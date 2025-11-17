@@ -1,104 +1,94 @@
-# Retina Theme - De Notenmarkt Gemoderniseerd
+# De Notenmarkt Modern Theme
 
-Dit is het Retina theme (november 2015) gemoderniseerd met De Notenmarkt styling en voedingswaarde tabellen.
+Een moderne Shopify theme gebaseerd op de Retina theme, volledig aangepast voor De Notenmarkt met premium styling en functionaliteit.
 
-## 🎨 Wat is er toegevoegd?
+## 🎨 Features
 
-### 1. Custom Styling
-- **Custom Fonts**: Playfair Display, Inter, Dancing Script
-- **Warme kleuren**: Primary brown, accent gold, earth tones
-- **Modern design**: Rounded buttons, warm shadows, smooth transitions
-- **Responsive**: Volledig geoptimaliseerd voor mobiel
+- **Moderne Styling**: Gebaseerd op de Retina theme met custom De Notenmarkt branding
+- **Custom Fonts**: Playfair Display, Inter, en Dancing Script voor een premium uitstraling
+- **Nutritional Table**: Moderne tabbed interface voor voedingswaarde informatie
+- **Responsive Design**: Volledig geoptimaliseerd voor mobiel, tablet en desktop
+- **Product Pages**: Verbeterde product pagina's met voedingswaarde tabel
+- **Custom Colors**: Brown en gold kleurenschema dat past bij noten en zuidvruchten
 
-### 2. Voedingswaarde Tabellen
-- **Premium styling**: Gradient achtergronden, moderne tabs, hover effects
-- **Automatische detectie**: Cashew, Amandel of standaard data
-- **3 tabs**: Energie, Vitamine, Mineralen
-- **ADH percentages**: In badge-stijl weergegeven
+## 📁 Structuur
 
-### 3. Product Pagina
-- Voedingswaarde tabel geïntegreerd
-- Modern styling toegepast
-- Betere spacing en typography
-
-## 📁 Bestanden
-
-### Nieuwe Bestanden
-- `assets/denotenmarkt-custom.css` - Alle custom styling
-- `assets/nutritional-table.css` - Styling voor voedingswaarde tabellen
-- `snippets/nutritional-table.liquid` - Voedingswaarde tabel component
-
-### Aangepaste Bestanden
-- `layout/theme.liquid` - Custom fonts en CSS links toegevoegd
-- `templates/product.liquid` - Voedingswaarde tabel geïntegreerd
+```
+denotenmarkt_modern/
+├── assets/
+│   ├── denotenmarkt-custom.css      # Custom styling voor De Notenmarkt
+│   ├── nutritional-table.css         # Styling voor voedingswaarde tabel
+│   └── styles.scss.css              # Originele Retina theme styles
+├── config/
+│   ├── settings_data.json           # Theme instellingen
+│   └── settings_schema.json         # Theme configuratie schema
+├── layout/
+│   └── theme.liquid                  # Hoofdlayout met custom fonts
+├── snippets/
+│   └── nutritional-table.liquid     # Voedingswaarde tabel snippet
+├── templates/
+│   ├── index.liquid                  # Homepage
+│   ├── product.liquid                # Product pagina (met nutritional table)
+│   └── ...
+└── locales/
+    └── nl-bas.json                   # Nederlandse vertalingen
+```
 
 ## 🚀 Installatie
 
-### Via Shopify Admin
-1. Ga naar **Online Store** → **Themes**
-2. Klik op **Add theme** → **Upload zip file**
-3. Upload een zip van deze directory
-4. Klik op **Publish** wanneer klaar
+1. **Upload naar Shopify**:
+   - Ga naar Shopify Admin → Online Store → Themes
+   - Klik op "Add theme" → "Upload zip file"
+   - Of gebruik GitHub Connect voor automatische updates
 
-### Via Shopify CLI
-```bash
-# Authenticatie
-shopify auth login
+2. **Configureer Menu's**:
+   - Ga naar Online Store → Navigation
+   - Maak menu's aan (bijv. "main-menu", "footer")
+   - Koppel menu's in Theme Editor → Header sectie
 
-# Development server
-shopify theme dev --store=noten-en-zuidvruchten.myshopify.com
+3. **Theme Instellingen**:
+   - Ga naar Theme Editor
+   - Pas kleuren, fonts en layout aan via Theme Settings
+   - Upload hero afbeeldingen voor homepage slideshow
 
-# Push naar development theme
-shopify theme push --development
-
-# Push naar live (voorzichtig!)
-shopify theme push --live
-```
-
-## 🎯 Features
-
-### Voedingswaarde Tabel
-De voedingswaarde tabel wordt automatisch getoond op product pagina's. De tabel detecteert automatisch:
-- **Cashew** producten → Cashew voedingswaarden
-- **Amandel** producten → Amandel voedingswaarden
-- **Andere** producten → Standaard voedingswaarden
+## 🎯 Belangrijke Bestanden
 
 ### Custom Styling
-Alle custom styling is toegepast:
-- Warme kleuren (brown, gold, earth tones)
-- Modern typography (Playfair Display voor titels)
-- Rounded buttons met shadows
-- Smooth transitions en animations
+- `assets/denotenmarkt-custom.css`: Alle custom styling voor De Notenmarkt branding
+- `assets/nutritional-table.css`: Premium styling voor voedingswaarde tabel
 
-## 📝 Aanpassingen
+### Templates
+- `templates/product.liquid`: Product pagina met geïntegreerde nutritional table
+- `templates/index.liquid`: Homepage met slideshow en product grid
 
-### Product Template
-De voedingswaarde tabel is toegevoegd na de product beschrijving:
-```liquid
-{% include 'nutritional-table' %}
+### Snippets
+- `snippets/nutritional-table.liquid`: Tabbed interface voor voedingswaarde informatie
+
+## 🔧 Aanpassingen
+
+### Kleuren Aanpassen
+Bewerk `assets/denotenmarkt-custom.css` en pas de CSS variabelen aan:
+```css
+:root {
+  --color-primary-500: #8B4513;  /* Primary brown */
+  --color-accent-300: #DAA520;   /* Accent gold */
+}
 ```
 
-### Theme Layout
-Custom fonts en CSS zijn toegevoegd in de `<head>`:
-- Google Fonts (Playfair Display, Inter, Dancing Script)
-- `denotenmarkt-custom.css`
-- `nutritional-table.css`
+### Voedingswaarde Tabel
+De tabel wordt automatisch getoond op product pagina's. Data wordt bepaald op basis van product titel (cashew/amandel).
 
-## 🔄 Updates
+## 📝 Notities
 
-Bij het updaten van het theme:
-1. Maak altijd een backup
-2. Controleer of custom bestanden behouden zijn
-3. Test grondig na updates
+- Theme is gebaseerd op Retina 3.1
+- Gebruikt Liquid templating language
+- Volledig responsive en mobiel-vriendelijk
+- Compatibel met Shopify 2.0 features
 
-## 📞 Support
+## 🔗 GitHub
 
-Voor vragen of problemen:
-- Controleer de documentatie
-- Test eerst in een development theme
-- Maak backups voordat je wijzigingen maakt
+Repository: https://github.com/BastiaanB1234/denotenmarkt_modern
 
----
+## 📄 Licentie
 
-**Gemaakt met ❤️ voor De Notenmarkt**
-
+Gebaseerd op Retina theme door Out of the Sandbox.
